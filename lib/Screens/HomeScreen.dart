@@ -13,8 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: ListView(
+      body: ListView(
         physics: const BouncingScrollPhysics(),
         children: <Widget>[
           //Home screen Navigation drawer and search
@@ -51,53 +50,108 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           //Explore nature title text
           Padding(
-            padding: EdgeInsets.only(top: 20, left: 10),
+            padding: EdgeInsets.only(top: 30, left: 10),
             child: Text(
               "Explore the \nbeauty of Nature",
               style: GoogleFonts.playfairDisplay(
-                  fontSize: 45, fontWeight: FontWeight.w700),
+                  fontSize: 50, fontWeight: FontWeight.w700),
             ),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Trips",
-                      style: GoogleFonts.playfairDisplay(
-                          fontSize: 20, fontWeight: FontWeight.w500),
-                    ),
-                    TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "View All",
-                          style: GoogleFonts.playfairDisplay(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.blue),
-                        ))
-                  ],
+          // Upcoming trips section
+          _buildTripSection(
+              title: "Upcoming Trips",
+              buttonText: "View All",
+              imageUrls: ["assets/images/kelingking.jpg", "assets/images/kelingking.jpg", "assets/images/kelingking.jpg"]),
+
+          // Popular trips section
+          _buildTripSection(
+              title: "Popular Trips",
+              buttonText: "View All",
+              imageUrls: ["assets/images/kelingking.jpg", "assets/images/kelingking.jpg", "assets/images/kelingking.jpg"]),
+
+          // Recent trips section
+          _buildTripSection(
+              title: "Our Recent Trips",
+              buttonText: "View All",
+              imageUrls: ["assets/images/kelingking.jpg", "assets/images/kelingking.jpg", "assets/images/kelingking.jpg"]),
+
+          //Custom tab bar with custom indicator section
+          // Container(
+          //   height: 30,
+          //   margin: const EdgeInsets.only(top: 28, left: 10),
+          //   child: DefaultTabController(
+          //     length: 3,
+          //     child: TabBar(
+          //       labelPadding: EdgeInsets.only(left: 14, right: 14),
+          //       tabs: [
+          //         Tab(
+          //             child: Container(
+          //           child: Text("Upcoming"),
+          //         )),
+          //         Tab(
+          //             child: Container(
+          //           child: Text("Popular"),
+          //         )),
+          //         Tab(
+          //             child: Container(
+          //           child: Text("Recent"),
+          //         )),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+        
+        ],
+      ),
+    );
+  }
+
+// Reusable widget for each trip section
+  Widget _buildTripSection({
+    required String title,
+    required String buttonText,
+    required List<String> imageUrls,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 5, top: 10),
+      child: Column(
+        children: [
+          // Row with title and view all button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style:
+                    GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w700),
+              ),
+              TextButton(
+                onPressed: () {}, // Handle view all button press
+                child: Text(
+                  buttonText,
+                  style: GoogleFonts.lato(fontSize: 13, color: Colors.blue),
                 ),
-                Container(
-                    height: 150,
-                    child: ListView.builder(
-                      itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.only(right: 10),
-                          width: 150,
-                          child: Image.asset('assets/images/kelingking.jpg'),
-                        );
-                      },
-                    )),
-              ],
+              ),
+            ],
+          ),
+
+          // Container with horizontally scrollable images
+          Container(
+            height: 320,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: imageUrls.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: const EdgeInsets.only(right: 10),
+                  width: 200,
+                  child: Image.asset(imageUrls[index], fit: BoxFit.cover),
+                );
+              },
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }
