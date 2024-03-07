@@ -26,8 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           //Home screen Navigation drawer and search
           Container(
-            height: 90.6,
-            margin: const EdgeInsets.only(top: 18.8, left: 10, right: 10),
+            height: 90,
+            margin: const EdgeInsets.only(top: 5, left: 12, right: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -45,11 +45,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Logo container
                 SizedBox(
-                  height: 100,
-                  width: 100,
+                  height: 90,
+                  width: 90,
                   child: Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(30),
                         image: const DecorationImage(
                           image: AssetImage(
                             "assets/images/karuraFriends3.jpg", // Replace with your logo image path
@@ -120,8 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Text(
                 title,
-                style:
-                    GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.w700),
+                style: GoogleFonts.lato(
+                    color: Color.fromARGB(255, 46, 33, 33),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700),
               ),
               TextButton(
                 onPressed: () {}, // Handle view all button press
@@ -236,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: _pageController,
             count: recommendations.length,
             effect: const ExpandingDotsEffect(
-                activeDotColor: Color.fromARGB(255, 57, 84, 97),
+                activeDotColor: Color.fromARGB(192, 212, 57, 57),
                 dotColor: Color(0xFFababab),
                 dotHeight: 5,
                 dotWidth: 6,

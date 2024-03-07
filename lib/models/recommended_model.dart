@@ -17,21 +17,21 @@ var recommendationsData = [
     "image":
         "https://images.pexels.com/photos/2583852/pexels-photo-2583852.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     "description":
-        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos"
+        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro"
   },
   {
     "name": "Bali, Indonesia",
     "image":
         "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
     "description":
-        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos"
+        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro"
   },
   {
     "name": "Yogyakarta, Indonesia",
     "image":
         "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80",
     "description":
-        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro"
+        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos n"
   },
   {
     "name": "Wiang Kum Kam, Thailand",
