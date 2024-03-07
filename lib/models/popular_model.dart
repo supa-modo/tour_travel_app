@@ -6,8 +6,8 @@ class PopularModel {
 }
 
 List<PopularModel> populars = popularsData
-    .map((item) => PopularModel(item['image'], item['color']))
-    .toList();
+   .map((item) => PopularModel(item['image'] as String, item['color'] as int))
+   .toList();
 
 var popularsData = [
   {"image": "assets/images/img_beach.png", "color": 0xFFFEF1ED},

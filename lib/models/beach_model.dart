@@ -5,7 +5,7 @@ class BeachModel {
 }
 
 List<BeachModel> beaches =
-    beachesData.map((item) => BeachModel(item['image'])).toList();
+    beachesData.map((item) => BeachModel(item['image']!)).toList();
 
 var beachesData = [
   {

@@ -6,7 +6,7 @@ class RecommendedModel {
 }
 
 List<RecommendedModel> recommendations = recommendationsData
-    .map((item) => RecommendedModel(item['name'], item['image']))
+    .map((item) => RecommendedModel(item['name']!, item['image']!))
     .toList();
 
 var recommendationsData = [
