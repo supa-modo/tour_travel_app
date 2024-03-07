@@ -23,11 +23,11 @@ class _DetailsPageState extends State<DetailsPage> {
               left: 0,
               right: 0,
               child: SizedBox(
-                height: size.height,
+                height: size.height * .7,
                 width: double.infinity,
                 child: FittedBox(
-                  child: Image.asset(widget.tripDetails.image),
                   fit: BoxFit.cover,
+                  child: Image.network(widget.tripDetails.image),
                 ),
               )),
           Positioned(
@@ -66,6 +66,21 @@ class _DetailsPageState extends State<DetailsPage> {
                   ),
                 ),
               ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: size.height * .6,
+              width: size.width,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.center,
+                      end: Alignment.topCenter,
+                      // stops: const [0.1],
+                      colors: [Colors.white, Colors.white.withOpacity(.03)])),
             ),
           ),
         ],

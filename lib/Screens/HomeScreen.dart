@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           //Home screen Navigation drawer and search
           Container(
-            height: 57.6,
+            height: 90.6,
             margin: const EdgeInsets.only(top: 18.8, left: 10, right: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,9 +47,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 100,
                   width: 100,
-                  child: Image.asset(
-                    "assets/images/karuraFriends3.jpg", // Replace with your logo image path
-                    fit: BoxFit.contain,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: const DecorationImage(
+                          image: AssetImage(
+                            "assets/images/karuraFriends3.jpg", // Replace with your logo image path
+                          ),
+                          fit: BoxFit.cover,
+                        )),
                   ),
                 ),
                 //Search Icon button
@@ -67,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           //Explore nature title text
           Padding(
-            padding: const EdgeInsets.only(top: 30, left: 10),
+            padding: const EdgeInsets.only(top: 10, left: 10),
             child: Text(
               "Explore the \nbeauty of Nature",
               style: GoogleFonts.playfairDisplay(
@@ -152,17 +159,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     recommendations.length,
                     (int index) => GestureDetector(
                       onTap: () {
-                      // Handle image click by navigating to another page
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DetailsPage(
-                            tripDetails: recommendations[index],
+                        // Handle image click by navigating to another page
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailsPage(
+                              tripDetails: recommendations[index],
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                      
+                        );
+                      },
                       child: Container(
                         margin: const EdgeInsets.only(right: 12),
                         width: 330,
