@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tour_travel_flutter_app/Screens/DetailsScreen.dart';
 import 'package:tour_travel_flutter_app/models/recommended_model.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -91,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             buttonText: "View All",
           ),
 
-          SizedBox(height: 25)
+          const SizedBox(height: 25)
         ],
       ),
     );
@@ -149,56 +150,70 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   children: List.generate(
                     recommendations.length,
-                    (int index) => Container(
-                      margin: const EdgeInsets.only(right: 12),
-                      width: 330,
-                      height: 218,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(recommendations[index].image),
+                    (int index) => GestureDetector(
+                      onTap: () {
+                      // Handle image click by navigating to another page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailsPage(
+                            tripDetails: recommendations[index],
+                          ),
                         ),
-                      ),
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                            bottom: 12,
-                            left: 10,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: BackdropFilter(
-                                filter: ImageFilter.blur(
-                                  sigmaY: 19,
-                                  sigmaX: 19,
-                                ),
-                                child: Container(
-                                  height: 35,
-                                  padding: const EdgeInsets.only(
-                                      left: 10, right: 14),
-                                  alignment: Alignment.centerLeft,
-                                  //Text and svg stacked on top of images
-                                  child: Row(
-                                    children: <Widget>[
-                                      SvgPicture.asset(
-                                        "assets/svg/icon_location.svg",
-                                      ),
-                                      const SizedBox(width: 10),
-                                      Text(
-                                        recommendations[index].name,
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          color: Colors.white,
-                                          fontSize: 16,
+                      );
+                    },
+                      
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 12),
+                        width: 330,
+                        height: 218,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(recommendations[index].image),
+                          ),
+                        ),
+                        child: Stack(
+                          children: <Widget>[
+                            Positioned(
+                              bottom: 12,
+                              left: 10,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(5),
+                                child: BackdropFilter(
+                                  filter: ImageFilter.blur(
+                                    sigmaY: 19,
+                                    sigmaX: 19,
+                                  ),
+                                  child: Container(
+                                    height: 35,
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 14),
+                                    alignment: Alignment.centerLeft,
+                                    //Text and svg stacked on top of images
+                                    child: Row(
+                                      children: <Widget>[
+                                        SvgPicture.asset(
+                                          "assets/svg/icon_location.svg",
                                         ),
-                                      ),
-                                    ],
+                                        const SizedBox(width: 10),
+                                        Text(
+                                          recommendations[index].name,
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
