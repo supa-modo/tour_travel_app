@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -121,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 title,
                 style: GoogleFonts.lato(
-                    color: Color.fromARGB(255, 46, 33, 33),
+                    color: const Color.fromARGB(255, 46, 33, 33),
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
               ),

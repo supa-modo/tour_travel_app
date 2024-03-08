@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tour_travel_flutter_app/Screens/BookTrip.dart';
 import 'package:tour_travel_flutter_app/models/recommended_model.dart';
 
 class DetailsPage extends StatefulWidget {
   final RecommendedModel tripDetails;
 
-  const DetailsPage({Key? key, required this.tripDetails}) : super(key: key);
+  const DetailsPage({super.key, required this.tripDetails});
 
   @override
   _DetailsPageState createState() => _DetailsPageState();
@@ -86,17 +87,20 @@ class _DetailsPageState extends State<DetailsPage> {
                       colors: [Colors.white, Colors.white.withOpacity(.03)])),
             ),
           ),
+          //Trip details
           Positioned(
               bottom: 50,
               left: 20,
               width: size.width * .9,
               child: SingleChildScrollView(
+                //Trip Details Section
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        //Trip Details name
                         Text(
                           widget.tripDetails.name,
                           style: const TextStyle(
@@ -104,6 +108,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               fontSize: 30,
                               fontWeight: FontWeight.w600),
                         ),
+                        //Rating text and icon
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -119,6 +124,7 @@ class _DetailsPageState extends State<DetailsPage> {
                     const SizedBox(
                       height: 10,
                     ),
+                    //Trip description text
                     Text(
                       widget.tripDetails.description,
                       style: const TextStyle(
@@ -129,10 +135,12 @@ class _DetailsPageState extends State<DetailsPage> {
                     const SizedBox(
                       height: 20,
                     ),
+                    // Favourite icon and Explore now text
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        //Favourite icon
                         Container(
                           padding: const EdgeInsets.all(7),
                           decoration: BoxDecoration(
@@ -147,21 +155,33 @@ class _DetailsPageState extends State<DetailsPage> {
                           ),
                         ),
                         const SizedBox(width: 15),
+                        //Explore now button
                         Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BookTrip()), // Replace BookTrip with the actual screen you want to navigate to
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
                                 color: const Color.fromARGB(192, 212, 57, 57),
                                 border: Border.all(
                                     color:
                                         const Color.fromARGB(192, 212, 57, 57)),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(10))),
-                            child: const Center(
-                              child: Text(
-                                "Explore Now",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 18),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(10)),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Explore Now",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 18),
+                                ),
                               ),
                             ),
                           ),
@@ -173,17 +193,6 @@ class _DetailsPageState extends State<DetailsPage> {
               ))
         ],
       ),
-      // Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       // Display details about the selected trip
-      //       Text("Trip Name: ${widget.tripDetails.name}"),
-      //       Text("Description: ${widget.tripDetails.description}"),
-      //       // Add more details as needed
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

@@ -38,7 +38,7 @@ var recommendationsData = [
     "image":
         "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     "description":
-        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro pos meaning non pro"
+        "lorem ipsum dolor sit amet, consectetur adipis non pro pos meaning nong non pro pos meaning non pro pos meaning non p"
   },
   {
     "name": "Garden The Bay, Singapore",
