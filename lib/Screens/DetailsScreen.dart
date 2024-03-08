@@ -163,7 +163,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        BookTrip()), // Replace BookTrip with the actual screen you want to navigate to
+                                        const BookTrip()), // Replace BookTrip with the actual screen you want to navigate to
                               );
                             },
                             child: Container(
