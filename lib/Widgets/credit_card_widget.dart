@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Widget buildCreditCard(
     {required Color color,
@@ -8,37 +9,57 @@ Widget buildCreditCard(
   return Card(
     color: color,
     child: Container(
-      height: 200,
-      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 22),
+      height: 220,
+      padding: const EdgeInsets.only(left: 12, right: 18, bottom: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           buildLogosBlock(),
-          //Card number details
-          Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: Text(
-              cardNumber,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 21,
-                  fontFamily: 'CourierPrime'),
-            ),
-          ),
           //Card chip and contactless icon
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Image.asset("assets/images/chip.jpeg", height: 35, width: 29,),
-              Image.asset("assets/images/contact_less.png", height: 30, width: 25,),
+              Row(
+                children: <Widget>[
+                  Image.asset(
+                "assets/images/backfilledarrow.png",
+                height: 15,
+                width: 15,
+              ),
+              Image.asset(
+                "assets/images/chip.png",
+                height: 60,
+                width: 55,
+              ),
+                ],
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Image.asset(
+                "assets/images/contact_less.png",
+                height: 30,
+                width: 25,
+              ),
             ],
           ),
+          //Card number details
+          Padding(
+            padding: const EdgeInsets.only(top: 5),
+            child: Text(
+              cardNumber,
+              style: GoogleFonts.courierPrime(color: Colors.white, 
+                  fontSize: 30),
+            ),
+          ),
+
           //Card name and expiration
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               buidlCardDetails(label: "Card Holder", value: cardHolder),
-              buidlCardDetails(label: "Valid Thru", value: cardExpiration),
+              buidlCardDetails(label: "VALID THRU", value: cardExpiration),
             ],
           ),
         ],
@@ -55,8 +76,8 @@ Widget buildLogosBlock() {
           style: TextStyle(fontSize: 20, color: Colors.white)),
       Image.asset(
         "assets/images/mastercard.png",
-        height: 50,
-        width: 50,
+        height: 45,
+        width: 45,
       )
     ],
   );

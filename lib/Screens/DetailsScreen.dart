@@ -89,7 +89,7 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
           //Trip details
           Positioned(
-              bottom: 50,
+              bottom: 30,
               left: 20,
               width: size.width * .9,
               child: SingleChildScrollView(
@@ -148,10 +148,10 @@ class _DetailsPageState extends State<DetailsPage> {
                                   const BorderRadius.all(Radius.circular(10)),
                               border: Border.all(
                                   color:
-                                      const Color.fromARGB(192, 212, 57, 57))),
+                                      const Color.fromARGB(215, 9, 9, 67))),
                           child: const Icon(
                             Icons.favorite_border,
-                            color: Color.fromARGB(192, 212, 57, 57),
+                            color: Color.fromARGB(215, 9, 9, 67),
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -169,10 +169,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: const Color.fromARGB(192, 212, 57, 57),
+                                color: Color.fromARGB(215, 9, 9, 67),
                                 border: Border.all(
                                     color:
-                                        const Color.fromARGB(192, 212, 57, 57)),
+                                        const Color.fromARGB(215, 9, 9, 67)),
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(10)),
                               ),

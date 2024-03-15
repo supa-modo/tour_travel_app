@@ -237,7 +237,7 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: _pageController,
             count: recommendations.length,
             effect: const ExpandingDotsEffect(
-                activeDotColor: Color.fromARGB(192, 212, 57, 57),
+                activeDotColor: Color.fromARGB(215, 9, 9, 67),
                 dotColor: Color(0xFFababab),
                 dotHeight: 5,
                 dotWidth: 6,
